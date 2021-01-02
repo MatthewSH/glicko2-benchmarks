@@ -31,6 +31,10 @@ let matches = [];
 for(let i = 0; i < options.players.limit; i++) {
     let username;
 
+    if(i % 10000 == 0) {
+        console.log(`Currently creating user ${i}`);
+    }
+
     do {
         username = faker.internet.userName();
     } while (players[username] != undefined);
@@ -54,6 +58,10 @@ for (let rp = 0; rp < options.periods.limit; rp++) {
     for(let i = 0; i < options.matches.limit; i++) {
         let player1Name = playerNames[randBetween(0, playerNames.length - 1)];
         let player2Name;
+
+        if(i % 10000 == 0) {
+            console.log(`Currently creating match ${i} in rating period #${rp+1}`);
+        }
 
         do {
             player2Name = playerNames[randBetween(0, playerNames.length - 1)];
