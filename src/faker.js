@@ -35,8 +35,15 @@ for(let i = 0; i < options.players.limit; i++) {
         console.log(`   Currently creating user ${i}`);
     }
 
+    let counter = 0;
+
     do {
         username = faker.internet.userName();
+        counter++;
+
+        if(counter % 10000 == 0) {
+            console.log(`   WARNING: POSSIBLE INFINITE LOOP ON USER #{i}. Do-while loop >${counter}.`);
+        }
     } while (players[username] != undefined);
     
     players[username] = {
