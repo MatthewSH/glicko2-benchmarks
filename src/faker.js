@@ -3,7 +3,7 @@ const fs = require('fs');
 
 let options = {
     players: {
-        limit: 50000,
+        limit: process.env.PLAYER_LIMIT,
         rating: {
             min: 100,
             max: 2400
@@ -18,7 +18,7 @@ let options = {
     },
 
     matches: {
-        limit: 100000,
+        limit: process.env.MATCH_LIMIT,
     }
 };
 
