@@ -32,7 +32,7 @@ for(let i = 0; i < options.players.limit; i++) {
     let username;
 
     if(i % 10000 == 0) {
-        console.log(`Currently creating user ${i}`);
+        console.log(`   Currently creating user ${i}`);
     }
 
     do {
@@ -60,7 +60,7 @@ for (let rp = 0; rp < options.periods.limit; rp++) {
         let player2Name;
 
         if(i % 10000 == 0) {
-            console.log(`Currently creating match ${i} in rating period #${rp+1}`);
+            console.log(`   Currently creating match ${i} in rating period #${rp+1}`);
         }
 
         do {
