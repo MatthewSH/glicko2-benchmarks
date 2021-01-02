@@ -1,0 +1,3 @@
+| Name        	| OS        	| CPU                            	| RAM                                                                 	| GFX                           	| MB            	|
+|-------------	|-----------	|--------------------------------	|---------------------------------------------------------------------	|-------------------------------	|---------------	|
+| Personal PC 	| W10 64bit 	| AMD Ryzen 5 3600 3.6GHz 6-Core 	| [G.Skill 16GB DDR4-3600 CL16](https://www.amazon.com/dp/B07X8DVDZZ) 	| NVIDIA GeForce GTX 1650 SUPER 	| B550 GAMING X 	|
