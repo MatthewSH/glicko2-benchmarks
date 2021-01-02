@@ -3,7 +3,7 @@ const fs = require('fs');
 
 let options = {
     players: {
-        limit: 1000000,
+        limit: 50000,
         rating: {
             min: 100,
             max: 2400
@@ -18,7 +18,7 @@ let options = {
     },
 
     matches: {
-        limit: 500000,
+        limit: 100000,
     }
 };
 
