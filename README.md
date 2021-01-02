@@ -24,6 +24,14 @@
 | glicko-two 	| ~260 ms   	| ~211 ms   	| ~199 ms   	|
 | glicko2-js 	| ~20 s     	| ~27 s     	| ~26 s     	|
 
+#### 100k Players, 100k Matches
+| Package    	| Period #1 	| Period #2 	| Period #3 	|
+|------------	|-----------	|-----------	|-----------	|
+| go-glicko  	| ~58 s     	| ~56 s     	| ~54 s     	|
+| glicko2    	| ~366 ms   	| ~308 ms   	| ~439 ms   	|
+| glicko-two 	| ~380 ms   	| ~436 ms   	| ~301 ms   	|
+| glicko2-js 	| ~3.9 min  	| ~5.58 min 	| ~6.7 min  	|
+
 #### 1k Players, 7.5k Matches
 | Package    	| Period #1 	| Period #2 	| Period #3 	|
 |------------	|-----------	|-----------	|-----------	|
