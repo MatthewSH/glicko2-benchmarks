@@ -8,11 +8,11 @@ for(let i = 0; i < 3; i++) {
         let matches = JSON.parse(fs.readFileSync('data/matches.json'));
         let players = {};
     
+        b.start();
+
         Object.keys(playersJSON).forEach((name) => {
             players[name] = new GoGlicko.Player(new GoGlicko.Rating(playersJSON[name].rating, playersJSON[name].rd, playersJSON[name].sigma));
         });
-        
-        b.start();
         
         let period = new GoGlicko.Period();
     
