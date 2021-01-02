@@ -63,3 +63,69 @@ for(let i = 0; i < 3; i++) {
         b.end();
     });
 }
+
+const glickoTwo = require('glicko-two');
+
+for(let i = 0; i < 3; i++) {
+    bench(`glicko-two rating period #${i+1}`, (b) => {
+        let playersJSON = JSON.parse(fs.readFileSync('data/players.json'));
+        let matches = JSON.parse(fs.readFileSync('data/matches.json'));
+        let players = {};
+    
+        b.start();
+
+        Object.keys(playersJSON).forEach((name) => {
+            players[name] = new glickoTwo.Player({
+                rating: playersJSON[name].rating,
+                ratingDeviation: playersJSON[name].rd,
+                tau: 0.05,
+                volatility: playersJSON[name].sigma
+            });
+        });
+
+        matches[i].forEach((m) => {
+            players[m.player1].addResult(players[m.player2], m.score);
+        });
+
+        Object.keys(players).forEach((name) => {
+            players[name].updateRating();
+        });
+
+        b.end();
+    });
+}
+
+const glicko2JS = require('glicko2-js');
+
+for(let i = 0; i < 3; i++) {
+    bench(`glicko2-js rating period #${i+1}`, (b) => {
+        let playersJSON = JSON.parse(fs.readFileSync('data/players.json'));
+        let matches = JSON.parse(fs.readFileSync('data/matches.json'));
+    
+        b.start();
+
+        let ratings = new glicko2JS();
+
+        Object.keys(playersJSON).forEach((name) => {
+            ratings.addPlayer(name, playersJSON[name].rating, playersJSON[name].rd, playersJSON[name].sigma);
+        });
+
+        matches[i].forEach((m) => {
+            switch (m.score) {
+                case 1.0:
+                    ratings.addMatch(m.player2, m.player1);
+                    break;
+                case 0.5:
+                    ratings.addMatch(m.player1, m.player2, true);
+                    break;
+                case 0.0:
+                    ratings.addMatch(m.player1, m.player2);
+                    break;
+            }
+        });
+
+        ratings.calculateRankings();
+
+        b.end();
+    });
+}
