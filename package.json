@@ -17,6 +17,7 @@
   "homepage": "https://github.com/MatthewSH/glicko2-benchmarks#readme",
   "dependencies": {
     "faker": "^5.1.0",
+    "glicko2": "^0.8.4",
     "go-glicko": "^1.0.0",
     "nanobench": "^2.1.1"
   }
