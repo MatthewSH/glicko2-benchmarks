@@ -1,0 +1,18 @@
+{
+  "name": "glicko2-benchmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewSH/glicko2-benchmarks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MatthewSH/glicko2-benchmarks/issues"
+  },
+  "homepage": "https://github.com/MatthewSH/glicko2-benchmarks#readme"
+}
