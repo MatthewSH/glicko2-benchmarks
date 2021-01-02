@@ -18,7 +18,7 @@ let options = {
     },
 
     matches: {
-        limit: 100000,
+        limit: 500000,
     }
 };
 
