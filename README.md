@@ -4,7 +4,6 @@
 - [glicko2](https://www.npmjs.com/package/glicko2)
 - [glicko-two](https://www.npmjs.com/package/glicko-two)
 - [glicko2-js](https://www.npmjs.com/package/glicko2-js)
-- [@serpentine/glicko2](https://www.npmjs.com/package/@serpentine/glicko2)
 
 ## Benchmarks
 
