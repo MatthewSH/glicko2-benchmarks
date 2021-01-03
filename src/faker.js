@@ -41,8 +41,10 @@ for(let i = 0; i < options.players.limit; i++) {
         username = faker.internet.userName();
         counter++;
 
-        if(counter % 10000 == 0) {
+        if(counter % 100 == 0) {
             console.log(`   WARNING: POSSIBLE INFINITE LOOP ON USER #{i}. Do-while loop >${counter}.`);
+
+            username += `_${faker.name.firstName()}_${faker.name.lastName()}`
         }
     } while (players[username] != undefined);
     
@@ -53,6 +55,7 @@ for(let i = 0; i < options.players.limit; i++) {
     }
 }
 
+console.log('Pushing names to array.');
 Object.keys(players).forEach((name) => {
     playerNames.push(name);
 })
@@ -66,7 +69,7 @@ for (let rp = 0; rp < options.periods.limit; rp++) {
         let player1Name = playerNames[randBetween(0, playerNames.length - 1)];
         let player2Name;
 
-        if(i % 10000 == 0) {
+        if(i % 100000 == 0) {
             console.log(`   Currently creating match ${i} in rating period #${rp+1}`);
         }
 
