@@ -60,13 +60,10 @@
 | Package          	| Period #1 	| Period #2 	| Period #3 	|
 |------------------	|-----------	|-----------	|-----------	|
 | go-glicko@1.0.0  	| ~6.97 h   	| -         	| -         	|
-| glicko2@0.8.4    	| ~3.91 s   	| ~4.13 s   	| ~3.7 s    	|
-| glicko-two@1.3.1 	| ~3.98 s   	| ~3.97 s   	| ~4.05 s   	|
+| go-glicko@1.1.0  	| ~10 s     	| ~6.89 s   	| ~6.83 s   	|
+| glicko2@0.8.4    	| ~4.26 s   	| ~4.01 s   	| ~3.85 s   	|
+| glicko-two@1.3.1 	| ~4.13 s   	| ~4.21 s   	| ~4.18 s   	|
 | glicko2-js@1.0.3 	| -         	| -         	| -         	|
-
-> Okay, wow. This is why I created these benchmarks. 7 hours to process 3 rating periods of 1 million matches with 1 million players? Ridiculous. I will be looking into this very carefully and tearing apart the code to discover why this is. In initial testing and working with prototypes, it didn't seem like much...but this? This is crazy. 
->
-> Matthew H, go-glicko developer
 
 ### Running Your Own Benchmarks
 1. First generate your data sets: `npx cross-env PLAYER_LIMIT=*limit* MATCH_LIMIT=*limit* node ./src/faker.js`
